@@ -147,7 +147,7 @@ with col_ctrl3:
         st.session_state["transactions"] = []
         st.session_state["history_top"] = []
         st.session_state["running"] = False
-        st.experimental_rerun()
+        st.rerun()
 
 # Bouton pas-à-pas (unique tick)
 if mode == "Pas-à-pas":
@@ -317,4 +317,4 @@ else:
 # Si le mode est Pas-à-pas et qu'on a demandé un pas, exécuter 1 tick puis re-run pour rafraîchir l'UI
 if mode == "Pas-à-pas" and do_step:
     changed_map = run_single_tick()
-    st.experimental_rerun()
+    st.rerun()
