@@ -269,7 +269,7 @@ if mode == "Auto" and st.session_state.get("running", False):
                 st.dataframe(tx_df.head(200))
                 # Préparer CSV pour téléchargement
                 csv_bytes = tx_df.to_csv(index=False).encode("utf-8")
-                # st.download_button("Télécharger les transactions (CSV)", data=csv_bytes, file_name="transactions_du_mois.csv", mime="text/csv")
+             
 
         # Attente (contrôlable)
         time.sleep(float(speed))
@@ -318,4 +318,5 @@ else:
 if mode == "Pas-à-pas" and do_step:
     changed_map = run_single_tick()
     st.rerun()
+
 
