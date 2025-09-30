@@ -228,7 +228,7 @@ if mode == "Auto" and st.session_state.get("running", False):
         with placeholder_table.container():
             st.subheader(f"Tick {st.session_state['tick']} / {max_ticks}")
             display_df = df_display[["rank","client_id","name","points","delta"]].copy()
-            display_df = display_df.rename(columns={"rank":"Classement","client_id":"ID","name":"Nom","points":"Points","delta":"Δ points"})
+            display_df = display_df.rename(columns={"rank":"Classement","client_id":"ID","name":"Nom","points":"Points","delta":"Δ points attribués"})
             st.table(display_df)
 
         # Bar chart du classement
@@ -318,3 +318,4 @@ else:
 if mode == "Pas-à-pas" and do_step:
     changed_map = run_single_tick()
     st.rerun()
+
